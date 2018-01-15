@@ -15,6 +15,14 @@ public class Rocket implements SpaceShip {
         cargo = new ArrayList<Item>();
     }
 
+    Rocket(double cost, int weight, int maxWeight, double explosionChance, double crashChance) {
+        this.setCost(cost);
+        this.setWeight(weight);
+        this.setMaxWeight(maxWeight);
+        this.setExplosionChance(explosionChance);
+        this.setCrashChance(crashChance);
+    }
+
     // Getters and Setters
     public double getCost() {
         return cost;
