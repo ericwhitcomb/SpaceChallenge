@@ -14,7 +14,7 @@ public class Simulation {
         while (scanner.hasNextLine()) {
             elements = scanner.nextLine().trim().split("=");
             if (elements.length == 2) {
-                items.add(new Item(elements[0], Integer.parseInt(elements[1])));
+                items.add(new Item(elements[0].trim(), Integer.parseInt(elements[1].trim())));
             }
 
         }
@@ -23,7 +23,7 @@ public class Simulation {
     }
 
     public void loadU1(ArrayList<Item> items) {
-        
+
     }
 
     public void loadU2(ArrayList<Item> items) {
