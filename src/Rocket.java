@@ -81,7 +81,7 @@ public class Rocket implements SpaceShip {
 
     @Override
     public boolean canCarry(Item item) {
-        int w = this.weight + this.cargoWeight + item.weight;
+        int w = this.weight + this.cargoWeight + item.getWeight();
         if (w > this.maxWeight) {
             return false;
         }
@@ -91,6 +91,6 @@ public class Rocket implements SpaceShip {
     @Override
     public void carry(Item item) {
         cargo.add(item);
-        cargoWeight += item.weight;
+        cargoWeight += item.getWeight();
     }
 }

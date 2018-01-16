@@ -22,12 +22,12 @@ public class Simulation {
         return items;
     }
 
-    public void loadU1(ArrayList<Item> items) {
-
+    public ArrayList<Rocket> loadU1(ArrayList<Item> items) {
+        return null;
     }
 
-    public void loadU2(ArrayList<Item> items) {
-
+    public ArrayList<Rocket> loadU2(ArrayList<Item> items) {
+        return null;
     }
 
     public double runSimulation(ArrayList<Rocket> rockets) {
