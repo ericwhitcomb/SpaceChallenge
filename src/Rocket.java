@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Rocket implements SpaceShip {
 
     private double cost;
-    private int weight;
-    private int cargoWeight;
-    private int maxWeight;
+    private long weight;
+    private long cargoWeight;
+    private long maxWeight;
     private double explosionChance;
     private double crashChance;
 
@@ -15,12 +15,14 @@ public class Rocket implements SpaceShip {
         cargo = new ArrayList<Item>();
     }
 
-    Rocket(double cost, int weight, int maxWeight, double explosionChance, double crashChance) {
+    Rocket(double cost, long weight, long maxWeight, double explosionChance, double crashChance) {
         this.setCost(cost);
         this.setWeight(weight);
         this.setMaxWeight(maxWeight);
         this.setExplosionChance(explosionChance);
         this.setCrashChance(crashChance);
+
+        cargo = new ArrayList<Item>();
     }
 
     // Getters and Setters
@@ -32,23 +34,23 @@ public class Rocket implements SpaceShip {
         this.cost = cost;
     }
 
-    public int getWeight() {
+    public long getWeight() {
         return this.weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(long weight) {
         this.weight = weight;
     }
 
-    public int getCargoWeight() {
+    public long getCargoWeight() {
         return this.cargoWeight;
     }
 
-    public int getMaxWeight() {
+    public long getMaxWeight() {
         return maxWeight;
     }
 
-    public void setMaxWeight(int maxWeight) {
+    public void setMaxWeight(long maxWeight) {
         this.maxWeight = maxWeight;
     }
 
@@ -81,7 +83,7 @@ public class Rocket implements SpaceShip {
 
     @Override
     public boolean canCarry(Item item) {
-        int w = this.weight + this.cargoWeight + item.getWeight();
+        long w = this.weight + this.cargoWeight + item.getWeight();
         if (w > this.maxWeight) {
             return false;
         }

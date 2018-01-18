@@ -23,15 +23,42 @@ public class Simulation {
     }
 
     public ArrayList<Rocket> loadU1(ArrayList<Item> items) {
-        return null;
+
+        ArrayList<Rocket> rockets = new ArrayList<Rocket>();
+        Rocket rocket = null;
+        int i = 0;
+        while(i < items.size()) {
+            rocket = new U1();
+
+            while(i < items.size() && rocket.canCarry(items.get(i))) {
+                rocket.carry(items.get(i));
+                i++;
+            }
+
+            rockets.add(rocket);
+        }
+        return rockets;
     }
 
     public ArrayList<Rocket> loadU2(ArrayList<Item> items) {
-        return null;
+
+        ArrayList<Rocket> rockets = new ArrayList<Rocket>();
+        Rocket rocket = null;
+        int i = 0;
+        while(i < items.size()) {
+            rocket = new U2();
+
+            while(i < items.size() && rocket.canCarry(items.get(i))) {
+                rocket.carry(items.get(i));
+                i++;
+            }
+
+            rockets.add(rocket);
+        }
+        return rockets;
     }
 
     public double runSimulation(ArrayList<Rocket> rockets) {
-
         return 0;
     }
 }
