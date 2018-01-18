@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class U1 extends Rocket {
 
     U1() {
@@ -16,11 +18,13 @@ public class U1 extends Rocket {
 
     @Override
     public boolean launch() {
-        return true;
+        double chance = this.getExplosionChance() * ((double) this.getCargoWeight() / (double) this.getMaxCargoWeight());
+        return !(chance >= Util.random.nextDouble());
     }
 
     @Override
     public boolean land() {
-        return true;
+        double chance = this.getCrashChance() * ((double) this.getCargoWeight() / (double) this.getMaxCargoWeight());
+        return !(chance >= Util.random.nextDouble());
     }
 }

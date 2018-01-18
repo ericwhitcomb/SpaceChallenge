@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Rocket implements SpaceShip {
 
@@ -48,6 +49,10 @@ public class Rocket implements SpaceShip {
 
     public long getMaxWeight() {
         return maxWeight;
+    }
+
+    public long getMaxCargoWeight() {
+        return this.maxWeight - this.weight;
     }
 
     public void setMaxWeight(long maxWeight) {

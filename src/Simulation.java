@@ -59,6 +59,24 @@ public class Simulation {
     }
 
     public double runSimulation(ArrayList<Rocket> rockets) {
-        return 0;
+        double total = 0;
+        for (Rocket rocket : rockets) {
+            boolean success = false;
+            while (!success) {
+                if (rocket.launch()) {
+                    if (rocket.land()) {
+                        total += rocket.getCost();
+                        success = true;
+                    } else {
+                        total += rocket.getCost();
+                        success = false;
+                    }
+                } else {
+                    total += rocket.getCost();
+                    success = false;
+                }
+            }
+        }
+        return total;
     }
 }
